@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dfbz.mapper.TeacherMapper">
+    <insert id="insertTeacher">
+        insert into t_teacher(tname, tpassword, tscript, tprofessional)
+        values (#{tname}, #{tpassword}, #{tscript}, #{tprofessional});
+    </insert>
+    <update id="updateTeacher">
+        update t_teacher
+        set tname=#{tname},
+            tpassword=#{tpassword},
+            tscript=#{tscript},
+            tprofessional=#{tprofessional}
+        where tid = #{tid};
+    </update>
+    <delete id="delTeacher">
+        delete from t_teacher where tid=#{tid}
+    </delete>
+
+    <select id="getAllTeacher" resultType="teacher">
+        select * from t_teacher where tname like concat('%',#{tname},'%') and tprofessional like concat('%',#{tprofessional},'%')  limit #{pageIndex},#{pageSize}
+    </select>
+    <select id="getCount" resultType="java.lang.Integer">
+        select count(*) from t_teacher where tname like concat('%',#{tname},'%') and tprofessional like concat('%',#{tprofessional},'%')
+    </select>
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dfbz.mapper.CourseMapper">
+    <insert id="insertCourse">
+        insert into t_course(cname, cprice, cshop, cphoto, cdetail, csuper, cpush, ctype)
+        values (#{cname}, #{cprice}, #{cshop}, #{cphoto}, #{cdetail}, #{csuper},#{cpush}, #{ctype});
+    </insert>
+    <update id="updateCourse">
+        update t_course
+        set cname=#{cname},
+            cprice=#{cprice},
+            cshop=#{cshop},
+            cphoto=#{cphoto},
+            cdetail=#{cdetail},
+            csuper=#{csuper},
+            cpush=#{cpush},
+            ctype=#{ctype} where cid=#{cid};
+    </update>
+    <delete id="delCourse" parameterType="integer">
+        delete from t_course where cid=#{cid}
+    </delete>
+    <select id="showAllCourse" resultType="course">
+        select * from t_course where cname like concat('%',#{cname},'%') and ctype like concat('%',#{ctype},'%')  limit #{pageIndex},#{pageSize}
+    </select>
+    <select id="getCount" resultType="java.lang.Integer">
+        select count(*) from t_course where cname like concat('%',#{cname},'%') and ctype like concat('%',#{ctype},'%')
+    </select>
+    <select id="findCourseById" resultType="course">
+
+        select * from t_course where  cid=#{cid}
+
+    </select>
+</mapper>

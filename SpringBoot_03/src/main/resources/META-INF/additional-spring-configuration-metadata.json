@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "aplipay.appid",
+      "type": "java.lang.String",
+      "description": "Description for aplipay.appid."
+  }
+] }

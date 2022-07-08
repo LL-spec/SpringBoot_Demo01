@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dfbz.mapper.DingdanMapper">
+    <delete id="delOrder">
+        delete from t_dingdan WHERE did=#{did}
+    </delete>
+
+
+    <select id="findAll" resultType="dingdan">
+        select dingdan.did did,dingdan.number number,course.cname cname,course.cdetail cdetail,user.uname uname,user.uid,course.cid
+        from t_user user,t_dingdan dingdan,t_course course
+        where user.uid=dingdan.uid
+          and course.cid=dingdan.cid
+          and user.uname like concat('%'
+            , #{uname}
+            , '%')
+          and course.cname like concat('%'
+            , #{cname}
+            , '%') limit #{pageIndex}
+            , #{pageSize};
+    </select>
+    <select id="getCount" resultType="java.lang.Integer">
+        select count(*)
+        from t_dingdan,t_course,t_user
+        where t_course.cname like concat('%', #{cname}, '%')
+          and t_user.uname like concat('%', #{uname}, '%')
+          and t_user.uid=t_dingdan.uid and t_course.cid=t_dingdan.cid
+    </select>
+</mapper>

@@ -1,0 +1,21 @@
+server:
+  port: 8081
+mybatis:
+  mapper-locations: classpath:com/dfbz/mapper/*.xml
+  # 扫描实体类的位置
+  type-aliases-package: com.dfbz.po
+  configuration:
+      # 默认的开启驼峰命名法
+    map-underscore-to-camel-case: true
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/xindongfang?useUnicode=true&serverTimeZone=UTC&characterEncoding=utf8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+#数据源信息 也需要配置
+  mvc:
+    view:
+      prefix: /jsp/
+      suffix: .jsp
+    static-path-pattern: /static/**

@@ -1,0 +1,188 @@
+/* Tooplate.com CSS 2021 SEP */
+
+body {
+	margin: 0px; padding: 0px;
+}
+
+div {
+overflow-x: hidden;
+}
+
+#header { padding-top: 30px; }
+
+#header logo { margin: 0px; padding: 0px; }
+
+#header_line { border-bottom: 1px solid #399; margin: 5px 3px 10px 0px; }
+
+.slogan { margin-left: 10px; margin-bottom: 20px; color: #999999; }
+.slogan a { color: #999999; }
+
+p a:link, p a:visited { color: #399; text-decoration: none; }
+p a:hover, p a:active { color: #C60; }
+
+.subtitle {
+	font-size: 1.6em;
+	color: #C00;
+}
+
+.tooplate_info {
+	color: #C00;
+}
+
+.too_et h2 { color: #39D; font-size: 2em; }
+
+.too_et p, .too_et li { line-height: 2em; font-size: 1.2em; }
+
+.too_para p { line-height: 1.6em; }
+
+.too_banner {
+    min-height: 260px;
+    overflow: hidden;
+    text-align: center;
+}
+
+form label {
+	font-size: 1.2em; font-weight: 100;
+}
+
+.form_field {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border: 1px solid #999999;
+	padding: 8px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	width: 95%;
+	max-width: 450px;
+}
+
+.tooplate_one { padding: 0px 20px; }
+	
+.box_title { text-align: center; color: #333; margin-top: 5px; margin-bottom: 40px; }
+
+.box_title h2 { font-size: 16px; }
+
+.box_title p { text-align: left; line-height: 1.6em; }
+
+.bottom_text_box { text-align: center; color: #399; margin-bottom: 20px; }
+
+
+/*
+#live-view {
+	position: fixed;
+	left: 0;
+	top: 90px;
+	width: 100%;
+	height: calc(100% - 90px);
+}
+*/
+#live-view {
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+.clear { clear: both; }
+.space10 { margin-top: 10px; }
+.space20 { margin-top: 20px; }
+.space30 { margin-top: 30px; }
+.space40 { margin-top: 40px; }
+
+
+.btn-paging { margin-left: 10px; margin-top: 5px; margin-bottom: 5px; }
+
+.btn-margin { float: left; margin-right: 20px; margin-top: 10px; margin-bottom: 10px; }
+
+.row ul { padding-left: 30px; }
+
+.clear { clear: both; }
+
+.float_left { float: left; }
+
+.float_right { float: right; }
+
+.img_left_gallery {	float: left; margin: 12px; padding: 8px; border: 1px solid #CCC; }
+
+.img_left {	float: left; margin-right: 20px; margin-bottom: 15px; }
+
+.img_right { float: right; margin: 0px 0px 15px 20px; }
+
+.tooplate_box img { max-width: 99%; }
+
+.footer {
+	margin-top: 20px;
+	margin-bottom: 120px;
+	border-top: 1px solid #DDDDDD;
+	padding: 20px 0px;
+	text-align: center;
+}
+
+/* Top Menu BEGIN */
+.tooplate_nav {
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+.tooplate_nav > li {
+  	display: inline-block;
+	margin-top: 8px;
+	margin-bottom: 4px;
+}
+.tooplate_nav > li + li {
+	
+}
+.tooplate_nav > li > a {
+	margin-left: 12px;
+  	margin-right: 0px;
+  	padding-right: 12px;
+  	padding-left: 12px;
+  	font-size: 16px;
+  	color: #399; /* IE8 proofing */
+  	border: 1px solid;
+	border-radius: 5px;
+}
+.tooplate_nav > li > a:hover,
+.tooplate_nav > li > a:focus {
+  	background-color: transparent;
+  	color: #C60;
+  	border-color: #C60;
+}
+.tooplate_nav > .active > a,
+.tooplate_nav > .active > a:hover,
+.tooplate_nav > .active > a:focus {
+  	color: #C60;
+  	border-color: #C60;
+}
+
+@media (min-width: 1300px) {
+	.container {
+		width: 1280px;
+	}
+}
+
+@media (min-width: 768px) {
+  .logo {
+    float: left;
+  }
+  .tooplate_nav {
+    float: right;
+  }
+}
+
+@media (max-width: 768px) {
+	.box_title { max-height: 130px; overflow: hidden; }
+	.box_title h2 { font-size: 14px; }
+	.box_title p { font-size: 12px; }
+}
+
+@media (max-width: 680px) {
+	#live-view {
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		height: 100%;
+	}
+	.too_banner {
+		min-height: 320px;
+	}
+}
